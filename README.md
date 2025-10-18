@@ -1,6 +1,6 @@
 # Human Activity Recognition using Neuromorphic X1 with Spiking Neural Network Algorithm
 
-The goal of this project is to create an integrated processing core that is specifically designed for biomedical applications, with a focus on using spiking neural network (SNN) algorithms to recognize human activity. The design of the architecture makes it fully compatible with the Neuromorphic X1 IP. The Caravel PicoRV interface sends processed classification outputs, while the MAX30102 sensor gets input directly.
+The objective of this project is to develop an integrated processing core optimized for biomedical signal analysis, focusing on human activity recognition using spiking neural network (SNN) algorithms. The architecture is designed to be fully compatible with the Neuromorphic X1 intellectual property (IP) core, enabling efficient in-memory computation for low-power edge processing. The system receives input directly from Photoplethysmography (PPG) and Inertial Measurement Unit (IMU) sensors, where the PPG provides physiological context such as pulse rate, stress level, and physical exertion, while the IMU captures motion dynamics and body kinematics. The processed classification results are transmitted through the Caravel PicoRV interface, allowing seamless integration with digital control and monitoring systems.
 
 ---
 
@@ -22,7 +22,7 @@ The project aims to demonstrate a low-power, hardware-efficient design that supp
 ## 2. Objectives
 - Implement a hardware-based spiking neural network for human activity recognition.  
 - Integrate the design with BM Labs’ Neuromorphic X1 IP.  
-- Interface directly with the MAX30102 biomedical sensor for real-time data input.  
+- Interface directly with the IMU and PPG sensor for real-time data input.  
 - Provide classification results through the Caravel PicoRV interface.  
 - Ensure open-source reproducibility and compliance with the BM Labs challenge requirements.
 
@@ -35,11 +35,17 @@ The project aims to demonstrate a low-power, hardware-efficient design that supp
 Figure: High-level block diagram showing MAX30102 → spike encoder/preprocessor → SNN core with NVM-based synaptic storage (Neuromorphic X1) → Caravel PicoRV interface for classification outputs.
 
 ### 3.2 Data Flow Description
-1. The MAX30102 sensor captures biomedical signals (e.g., heart rate, motion).  
+1. The PPG and IMU sensor captures biomedical signals (e.g., heart rate, motion).  
 2. The signal is pre-processed and converted into spike representations.  
 3. The SNN core performs inference and classification.  
 4. The results are output through the Caravel PicoRV interface for monitoring or logging or using LED indicator as output.
 
+###  3.3 Metrics
+1. Accuracy: ≤ 3% error vs reference software-based SNN.
+2. Latency: Real-time inference on 2–4 s sensor windows with ≤ 100 ms response.
+3. Encoding: Supports rate and latency-based spike encoding.
+4. Architecture: Multi-layer SNN supported through tiling of 32×32 CIM arrays (scalable up to 4 tiles per layer).
+   
 ---
 
 ## 4. Spiking Neural Network Training.
@@ -55,12 +61,12 @@ By combining NVM-based CIM with the Neuromorphic X1 core, the design supports sp
 ---
 
 ## 5. Implementation Plan
-| Phase | Description | Tools | Deliverables | Status |
-|-------|-------------|-------|--------------|--------|
-| Phase 1 | Algorithm development & simulation | Python | Trained SNN model | Completed |
-| Phase 2 | RTL design & synthesis | iVerilog, Yosys, OpenLane | Synthesizable SNN core | In progress |
-| Phase 3 | SoC integration & layout | Magic, Klayout, Caravel | GDSII and integration report | Planned |
-| Phase 4 | Verification & documentation | GTKWave, cocotb | Simulation logs, testbench | Pending verification |
+| Phase | Description | Tools | Deliverables | Status | Dates |
+|-------|-------------|-------|--------------|--------|-------|
+| Phase 1 | Algorithm development & simulation | Python | Trained SNN model | Completed | 
+| Phase 2 | RTL design & synthesis | iVerilog, Yosys, OpenLane | Synthesizable SNN core | In progress | 10 - 20 Oct |
+| Phase 3 | SoC integration & layout | Magic, Klayout, Caravel | GDSII and integration report | Planned | 21 - 25 Oct |
+| Phase 4 | Verification & documentation | GTKWave, cocotb | Simulation logs, testbench | Pending verification | 26 - 2 Oct |
 
 ---
 
