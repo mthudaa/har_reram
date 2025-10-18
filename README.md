@@ -30,7 +30,7 @@ The project aims to demonstrate a low-power, hardware-efficient design that supp
 
 ## 3. System Overview
 ### 3.1 Architecture Diagram
-![Architecture Diagram — HAR with NVM and Neuromorphic X1](docs/HAR_NVM.drawio_latest.png)
+![Architecture Diagram — HAR with NVM and Neuromorphic X1](docs/HAR_NVM_latest.png)
 
 Figure: High-level block diagram showing MAX30102 → spike encoder/preprocessor → SNN core with NVM-based synaptic storage (Neuromorphic X1) → Caravel PicoRV interface for classification outputs.
 
@@ -45,7 +45,7 @@ Figure: High-level block diagram showing MAX30102 → spike encoder/preprocessor
 2. Latency: Real-time inference on 2–4 s sensor windows.
 3. Encoding: Supports rate and latency-based spike encoding.
 4. Architecture: Multi-layer SNN supported through tiling of 32×32 CIM arrays (scalable up to 4 tiles per layer).
-   
+5. Classification Task: Capable of recognizing three human activities(sitting, walking, and running).
 ---
 
 ## 4. Spiking Neural Network Training.
