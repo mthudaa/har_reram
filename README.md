@@ -47,9 +47,6 @@ The model (weight) training use snntorch to obtain the weight and bias of SNN cr
 
 ## 4. Integration with BM Labs’ IP
 This project reuses a previously developed neuromorphic hardware design that already integrates BM Labs’ non-volatile memory (NVM) IP. The NVM serves as synaptic weight storage for compute-in-memory (CIM) operations, enabling data processing directly within the memory array to minimize data movement and energy consumption.
-
-The use of NVM is essential because it provides persistent, low-power storage that retains learned weights even after power loss — ideal for edge AI systems requiring always-on functionality. The novelty of this design lies in combining NVM-based weight storage with analog neuron circuits, allowing in-situ computation and adaptive learning within a compact, energy-efficient architecture fully compatible with the Caravel SoC platform.
-
 ---
 
 ## 5. Implementation Plan
