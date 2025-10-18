@@ -30,7 +30,7 @@ The project aims to demonstrate a low-power, hardware-efficient design that supp
 
 ## 3. System Overview
 ### 3.1 Architecture Diagram
-![Architecture Diagram — HAR with NVM and Neuromorphic X1](docs/HAR_NVM.drawio.png)
+![Architecture Diagram — HAR with NVM and Neuromorphic X1](docs/HAR_NVM.drawio_latest.png)
 
 Figure: High-level block diagram showing MAX30102 → spike encoder/preprocessor → SNN core with NVM-based synaptic storage (Neuromorphic X1) → Caravel PicoRV interface for classification outputs.
 
