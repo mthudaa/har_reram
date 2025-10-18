@@ -46,9 +46,9 @@ Figure: High-level block diagram showing MAX30102 → spike encoder/preprocessor
 The model (weight) training use snntorch to obtain the weight and bias of SNN crossbar. The code notebook is in here [Python Notebook SNN Training](training_snn)
 
 ## 4. Integration with BM Labs’ IP
-- **NVM IP Usage**: Specify how BM Labs’ non-volatile memory is used (e.g., synaptic weight storage or in-memory computation).  
-- **Neuromorphic X1 Compatibility**: Describe interface signals, voltage domains, and data exchange format.  
-- **Caravel User Project Area**: Ensure full integration with the open-source Caravel SoC platform.
+This project reuses a previously developed neuromorphic hardware design that already integrates BM Labs’ non-volatile memory (NVM) IP. The NVM serves as synaptic weight storage for compute-in-memory (CIM) operations, enabling data processing directly within the memory array to minimize data movement and energy consumption.
+
+The use of NVM is essential because it provides persistent, low-power storage that retains learned weights even after power loss — ideal for edge AI systems requiring always-on functionality. The novelty of this design lies in combining NVM-based weight storage with analog neuron circuits, allowing in-situ computation and adaptive learning within a compact, energy-efficient architecture fully compatible with the Caravel SoC platform.
 
 ---
 
