@@ -42,7 +42,7 @@ Figure: High-level block diagram showing MAX30102 → spike encoder/preprocessor
 
 ###  3.3 Metrics
 1. Accuracy: ≤ 3% error vs reference software-based SNN.
-2. Latency: Real-time inference on 2–4 s sensor windows with ≤ 100 ms response.
+2. Latency: Real-time inference on 2–4 s sensor windows.
 3. Encoding: Supports rate and latency-based spike encoding.
 4. Architecture: Multi-layer SNN supported through tiling of 32×32 CIM arrays (scalable up to 4 tiles per layer).
    
