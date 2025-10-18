@@ -1,6 +1,8 @@
 # Human Activity Recognition using Neuromorphic X1 with Spiking Neural Network Algorithm
 
-The goal of this project is to create an integrated processing core that is specifically designed for biomedical applications, with a focus on using spiking neural network (SNN) algorithms to recognize human activity. The design of the architecture makes it fully compatible with the Neuromorphic X1 IP. The Caravel PicoRV interface sends processed classification outputs, while the MAX30102 sensor gets input directly.
+This project reuses a previously developed neuromorphic hardware design that already integrates BM Labs’ non-volatile memory (NVM) IP. The NVM functions as synaptic weight storage for compute-in-memory (CIM) operations, enabling efficient in-memory processing that reduces data movement and power consumption.
+
+By combining NVM-based CIM with the Neuromorphic X1 core, the design supports spiking neural network (SNN) processing for biomedical signal recognition. This integration ensures low-power operation, real-time activity classification, and seamless compatibility with the Caravel PicoRV interface and MAX30102 sensor input.
 
 ---
 
@@ -47,6 +49,8 @@ The model (weight) training use snntorch to obtain the weight and bias of SNN cr
 
 ## 4. Integration with BM Labs’ IP
 This project reuses a previously developed neuromorphic hardware design that already integrates BM Labs’ non-volatile memory (NVM) IP. The NVM serves as synaptic weight storage for compute-in-memory (CIM) operations, enabling data processing directly within the memory array to minimize data movement and energy consumption.
+
+
 ---
 
 ## 5. Implementation Plan
